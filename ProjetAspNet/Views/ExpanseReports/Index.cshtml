@@ -1,0 +1,113 @@
+﻿@model IEnumerable<ProjetAspNet.Models.ExpanseReports>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Month)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManagerValidationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountingValidatationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_HT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_TVA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_TTC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManagerComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountingComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees.User_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employees1.User_ID)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManagerValidationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountingValidatationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_HT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_TVA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_TTC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManagerComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountingComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employees.User_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employees1.User_ID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ExpanseReport_ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ExpanseReport_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ExpanseReport_ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

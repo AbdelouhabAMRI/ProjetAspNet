@@ -1,0 +1,58 @@
+﻿@model ProjetAspNet.Models.ExpanseTypes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ExpanseTypes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ceiling)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ceiling)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fixed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fixed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnlyManagers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnlyManagers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tvas.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tvas.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ExpenseType_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

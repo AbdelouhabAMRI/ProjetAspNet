@@ -1,0 +1,136 @@
+﻿@model ProjetAspNet.Models.ExpanseReports
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>ExpanseReports</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CreationDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Year)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Year)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Month)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Month)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.StatusCode)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.StatusCode)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ManagerValidationDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ManagerValidationDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountingValidatationDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AccountingValidatationDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Total_HT)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Total_HT)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Total_TVA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Total_TVA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Total_TTC)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Total_TTC)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ManagerComment)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ManagerComment)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountingComment)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AccountingComment)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Employees.User_ID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Employees.User_ID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Employees1.User_ID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Employees1.User_ID)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

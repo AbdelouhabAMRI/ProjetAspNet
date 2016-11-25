@@ -1,0 +1,90 @@
+﻿@model ProjetAspNet.Models.Expanses
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Expanses</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Day)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Day)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount_HT)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Amount_HT)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount_TVA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Amount_TVA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount_TTC)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Amount_TTC)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Customers.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Customers.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExpanseReports.ManagerComment)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExpanseReports.ManagerComment)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ExpanseTypes.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ExpanseTypes.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Projects.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Projects.Name)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Expanse_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

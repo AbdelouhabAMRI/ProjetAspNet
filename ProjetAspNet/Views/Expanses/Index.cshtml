@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ProjetAspNet.Models.Expanses>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Day)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount_HT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount_TVA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount_TTC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpanseReports.ManagerComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpanseTypes.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projects.Name)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount_HT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount_TVA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount_TTC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customers.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpanseReports.ManagerComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpanseTypes.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Projects.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Expanse_ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Expanse_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Expanse_ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

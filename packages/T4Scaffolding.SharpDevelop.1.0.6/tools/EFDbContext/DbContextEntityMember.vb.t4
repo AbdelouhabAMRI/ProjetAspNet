@@ -1,0 +1,3 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ import namespace="EnvDTE = ICSharpCode.PackageManagement.EnvDTE" #>
+Public Property <#= Model.EntityTypeNamePluralized #> As DbSet(Of <#= ((EnvDTE.CodeType)Model.EntityType).FullName #>)

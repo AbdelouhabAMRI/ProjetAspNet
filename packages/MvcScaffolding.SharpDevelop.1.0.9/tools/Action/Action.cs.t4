@@ -1,0 +1,13 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ import namespace="EnvDTE" #>
+<# var viewModel = (EnvDTE.CodeType)Model.ViewModel; #>
+public ViewResult <#= Model.Action #>()
+{
+<# if (viewModel == null) { #>
+	return View();
+<# } else { #>
+	return View(new <#= viewModel.Name #> {
+		// Populate properties here
+	});
+<# } #>
+}
