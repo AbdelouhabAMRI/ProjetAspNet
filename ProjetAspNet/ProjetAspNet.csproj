@@ -362,11 +362,6 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Poles\Create.cshtml" />
-    <Content Include="Views\Poles\Delete.cshtml" />
-    <Content Include="Views\Poles\Details.cshtml" />
-    <Content Include="Views\Poles\Edit.cshtml" />
-    <Content Include="Views\Poles\Index.cshtml" />
     <Content Include="Views\Expanses\Create.cshtml" />
     <Content Include="Views\Expanses\Delete.cshtml" />
     <Content Include="Views\Expanses\Details.cshtml" />
@@ -377,11 +372,6 @@
     <Content Include="Views\ExpanseReports\Details.cshtml" />
     <Content Include="Views\ExpanseReports\Edit.cshtml" />
     <Content Include="Views\ExpanseReports\Index.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
-    <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\AspNetUsers\Create.cshtml" />
     <Content Include="Views\AspNetUsers\Delete.cshtml" />
     <Content Include="Views\AspNetUsers\Details.cshtml" />
@@ -397,16 +387,26 @@
     <Content Include="Views\AspNetUserClaims\Details.cshtml" />
     <Content Include="Views\AspNetUserClaims\Edit.cshtml" />
     <Content Include="Views\AspNetUserClaims\Index.cshtml" />
-    <Content Include="Views\AspNetRoles\Create.cshtml" />
-    <Content Include="Views\AspNetRoles\Delete.cshtml" />
-    <Content Include="Views\AspNetRoles\Details.cshtml" />
-    <Content Include="Views\AspNetRoles\Edit.cshtml" />
-    <Content Include="Views\AspNetRoles\Index.cshtml" />
     <Content Include="Views\C__MigrationHistory\Create.cshtml" />
     <Content Include="Views\C__MigrationHistory\Delete.cshtml" />
     <Content Include="Views\C__MigrationHistory\Details.cshtml" />
     <Content Include="Views\C__MigrationHistory\Edit.cshtml" />
     <Content Include="Views\C__MigrationHistory\Index.cshtml" />
+    <Content Include="Views\AspNetRoles\Create.cshtml" />
+    <Content Include="Views\AspNetRoles\Delete.cshtml" />
+    <Content Include="Views\AspNetRoles\Details.cshtml" />
+    <Content Include="Views\AspNetRoles\Edit.cshtml" />
+    <Content Include="Views\AspNetRoles\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Poles\Create.cshtml" />
+    <Content Include="Views\Poles\Delete.cshtml" />
+    <Content Include="Views\Poles\Details.cshtml" />
+    <Content Include="Views\Poles\Edit.cshtml" />
+    <Content Include="Views\Poles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

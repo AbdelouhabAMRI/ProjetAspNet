@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -15,20 +16,20 @@ namespace ProjetAspNet.Controllers
         private NotesDeFraisEntities db = new NotesDeFraisEntities();
 
         // GET: Poles
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             var poles = db.Poles.Include(p => p.Employees1);
-            return View(poles.ToList());
+            return View(await poles.ToListAsync());
         }
 
         // GET: Poles/Details/5
-        public ActionResult Details(Guid? id)
+        public async Task<ActionResult> Details(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Poles poles = db.Poles.Find(id);
+            Poles poles = await db.Poles.FindAsync(id);
             if (poles == null)
             {
                 return HttpNotFound();
@@ -48,13 +49,13 @@ namespace ProjetAspNet.Controllers
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Pole_ID,Name,Manager_ID")] Poles poles)
+        public async Task<ActionResult> Create([Bind(Include = "Pole_ID,Name,Manager_ID")] Poles poles)
         {
             if (ModelState.IsValid)
             {
                 poles.Pole_ID = Guid.NewGuid();
                 db.Poles.Add(poles);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -63,13 +64,13 @@ namespace ProjetAspNet.Controllers
         }
 
         // GET: Poles/Edit/5
-        public ActionResult Edit(Guid? id)
+        public async Task<ActionResult> Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Poles poles = db.Poles.Find(id);
+            Poles poles = await db.Poles.FindAsync(id);
             if (poles == null)
             {
                 return HttpNotFound();
@@ -83,12 +84,12 @@ namespace ProjetAspNet.Controllers
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Pole_ID,Name,Manager_ID")] Poles poles)
+        public async Task<ActionResult> Edit([Bind(Include = "Pole_ID,Name,Manager_ID")] Poles poles)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(poles).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             ViewBag.Manager_ID = new SelectList(db.Employees, "Employee_ID", "User_ID", poles.Manager_ID);
@@ -96,13 +97,13 @@ namespace ProjetAspNet.Controllers
         }
 
         // GET: Poles/Delete/5
-        public ActionResult Delete(Guid? id)
+        public async Task<ActionResult> Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Poles poles = db.Poles.Find(id);
+            Poles poles = await db.Poles.FindAsync(id);
             if (poles == null)
             {
                 return HttpNotFound();
@@ -113,11 +114,11 @@ namespace ProjetAspNet.Controllers
         // POST: Poles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(Guid id)
+        public async Task<ActionResult> DeleteConfirmed(Guid id)
         {
-            Poles poles = db.Poles.Find(id);
+            Poles poles = await db.Poles.FindAsync(id);
             db.Poles.Remove(poles);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

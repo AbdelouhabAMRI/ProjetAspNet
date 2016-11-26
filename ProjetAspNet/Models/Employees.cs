@@ -11,7 +11,8 @@ namespace ProjetAspNet.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Employees
     {
         public Employees()
@@ -21,13 +22,17 @@ namespace ProjetAspNet.Models
             this.Poles1 = new HashSet<Poles>();
         }
     
-        public System.Guid Employee_ID { get; set; }
+        public Guid Employee_ID { get; set; }
         public string User_ID { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
+        [Phone]
         public string Telephone { get; set; }
-        public Nullable<System.Guid> Pole_ID { get; set; }
+        public Guid? Pole_ID { get; set; }
     
         public virtual AspNetUsers AspNetUsers { get; set; }
         public virtual Poles Poles { get; set; }

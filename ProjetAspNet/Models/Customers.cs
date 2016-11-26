@@ -11,7 +11,8 @@ namespace ProjetAspNet.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Customers
     {
         public Customers()
@@ -21,7 +22,9 @@ namespace ProjetAspNet.Models
         }
     
         public System.Guid Customer_ID { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string Code { get; set; }
     
         public virtual ICollection<Expanses> Expanses { get; set; }
